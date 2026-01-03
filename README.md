@@ -13,32 +13,8 @@
    python3 -m pip install -r requirements.txt
    ```
 
-## Ρύθμιση βάσης
-Η εφαρμογή περιμένει βάση MySQL με όνομα `farmakeio_db` (μπορεί να αλλάξει μέσω .env).
-
-1. Δημιούργησε το schema:
-   ```bash
-   mysql -u <user> -p < sql/schema.sql
-   ```
-2. Φόρτωσε δείγμα προϊόντων (χρειάζεται `LOCAL INFILE`):
-   ```bash
-   cd sql
-   mysql --local-infile=1 -u <user> -p < proionta.sql
-   ```
-   Το αρχείο `sql/proionta.sql` διαβάζει το `sql/proion_brands.csv`.
-
-## Περιβάλλον (.env)
-Μπορείς να δημιουργήσεις `.env` στο root για να ορίσεις στοιχεία σύνδεσης:
-```dotenv
-DB_HOST=127.0.0.1
-DB_USER=admin
-DB_PASSWORD=password
-DB_NAME=farmakeio_db
-DB_PORT=3306
-DB_POOL_SIZE=5
-```
-
 ## Εκτέλεση
+Στο bash/command line με `cd` πήγαινε στον φάκελο του project και εκτέλεσε την εντολή:
 ```bash
 python3 main.py
 ```
